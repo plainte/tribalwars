@@ -186,7 +186,6 @@ async function getNewVillage(e) {
         url: t,
         dataType: "html",
         error: function(e, t) {
-            console.log("Error: " + t),
             window.top.$("#fader").remove(),
             window.top.$("#loaders").remove()
         },
@@ -346,6 +345,7 @@ function checkIfNextVillage() {
     if (userset[s.next_village_farming_troops]) {
         var o = 0;
         if (window.top.$(".fm_unit input:checked").each(function(e) {
+					  debugger;
             var t = window.top.$(this).attr("name");
             o += parseInt(current_units[t])
         }),
